@@ -4,6 +4,9 @@
 #Игра в стиле Space Invaders, улучшеная версия первой
 import pygame, sys, random, time
 
+#CHANGE THIS VARIABLE
+PATH = '/home/kolya/Desktop/Space Invanders new'
+
 #Инициализация игры
 pygame.init()
 
@@ -11,18 +14,18 @@ pygame.init()
 pygame.display.set_caption('Space Invanders')
 
 #Иконка приложения
-icon_of_app = pygame.image.load('/home/kolya/Desktop/Space Invanders new/icon.png')
+icon_of_app = pygame.image.load(PATH + '/icon.png')
 
 #Устанавлеваем иконку приложения 
 pygame.display.set_icon(icon_of_app)
 
 #Картинка босса- кота
-picture_of_boss = pygame.image.load('/home/kolya/Desktop/Space Invanders new/Кот-Босс.png')
+picture_of_boss = pygame.image.load(PATH + '/boss.png')
 
 #Звуки
-shoot = pygame.mixer.Sound('/home/kolya/Desktop/Space Invanders new/звук выстрела.wav')
-dead_enemy = pygame.mixer.Sound('/home/kolya/Desktop/Space Invanders new/убитый враг.wav')
-dead_player = pygame.mixer.Sound('/home/kolya/Desktop/Space Invanders new/смерть игрока.wav')
+shoot = pygame.mixer.Sound(PATH + '/sound of bang.wav')
+dead_enemy = pygame.mixer.Sound(PATH + '/sound of killing the enemy.wav')
+dead_player = pygame.mixer.Sound(PATH + '/sound of fail.wav')
 
 #Технические константы
 FPS = 60
@@ -31,13 +34,13 @@ display_height = 600
 BACKGROUND_COLOR = (16, 56, 94)
 
 #Константа для показателя жизней
-image_heart = pygame.image.load('/home/kolya/Desktop/Space Invanders new/очко жизни.png')
+image_heart = pygame.image.load(PATH + '/hp.png')
 
 #Картинка для фона игры
-BG = pygame.image.load('/home/kolya/Desktop/Space Invanders new/Фон.jpg')
+BG = pygame.image.load(PATH + '/background.jpg')
 
 #Картинка галвного игрока, его х, его у, его скорость перемещения
-image_puska = pygame.image.load('/home/kolya/Desktop/Space Invanders new/ship.png')
+image_puska = pygame.image.load(PATH + '/ship.png')
 x_pushka = 300
 y_pushka = 480
 speed_pushka = 2
@@ -49,7 +52,7 @@ RED = (255, 0, 0)
 bullets = []
 
 #Картинка противника
-enemy_image = pygame.image.load('/home/kolya/Desktop/Space Invanders new/враг.png')
+enemy_image = pygame.image.load(PATH + '/enemy.png')
 
 #Скорость игрового цикла
 display = pygame.display.set_mode((display_width, display_height))
@@ -672,7 +675,7 @@ def append_bullet():
 arr_rects_puska = []
 
 #Картинка для фона меню
-menu_back = pygame.image.load('/home/kolya/Desktop/Space Invanders new/Фон.jpg')
+menu_back = pygame.image.load(PATH + '/background.jpg')
 
 #Кнопки из класса кнопок окна меню
 btn_2 = Button(210, 80)
@@ -948,90 +951,6 @@ game()
 
 
   
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
