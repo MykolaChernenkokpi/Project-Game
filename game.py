@@ -2,10 +2,9 @@
 #2019 год 30 сентября - начало проекта
 # - конец проекта
 #Игра в стиле Space Invaders, улучшеная версия первой
-import pygame, sys, random, time
+import pygame, sys, random, os
 
-#CHANGE THIS VARIABLE
-PATH = '/home/kolya/Desktop/Space Invanders new'
+base_path = os.path.dirname(__file__)
 
 #Инициализация игры
 pygame.init()
@@ -14,18 +13,20 @@ pygame.init()
 pygame.display.set_caption('Space Invanders')
 
 #Иконка приложения
-icon_of_app = pygame.image.load(PATH + '/icon.png')
+icon_of_app_path = os.path.join(base_path, "icon.png")
+icon_of_app = pygame.image.load(icon_of_app_path)
 
 #Устанавлеваем иконку приложения 
 pygame.display.set_icon(icon_of_app)
 
 #Картинка босса- кота
-picture_of_boss = pygame.image.load(PATH + '/boss.png')
+picture_of_boss_path = os.path.join(base_path, "boss.png")
+picture_of_boss = pygame.image.load(picture_of_boss_path)
 
 #Звуки
-shoot = pygame.mixer.Sound(PATH + '/sound of bang.wav')
-dead_enemy = pygame.mixer.Sound(PATH + '/sound of killing the enemy.wav')
-dead_player = pygame.mixer.Sound(PATH + '/sound of fail.wav')
+shoot = pygame.mixer.Sound(os.path.join(base_path, "sound of bang.wav"))
+dead_enemy = pygame.mixer.Sound(os.path.join(base_path, "sound of killing the enemy.wav"))
+dead_player = pygame.mixer.Sound(os.path.join(base_path, "sound of fail.wav"))
 
 #Технические константы
 FPS = 60
@@ -34,13 +35,13 @@ display_height = 600
 BACKGROUND_COLOR = (16, 56, 94)
 
 #Константа для показателя жизней
-image_heart = pygame.image.load(PATH + '/hp.png')
+image_heart = pygame.image.load(os.path.join(base_path, "hp.png"))
 
 #Картинка для фона игры
-BG = pygame.image.load(PATH + '/background.jpg')
+BG = pygame.image.load(os.path.join(base_path, "background.jpg"))
 
 #Картинка галвного игрока, его х, его у, его скорость перемещения
-image_puska = pygame.image.load(PATH + '/ship.png')
+image_puska = pygame.image.load(os.path.join(base_path, "ship.png"))
 x_pushka = 300
 y_pushka = 480
 speed_pushka = 2
@@ -52,7 +53,7 @@ RED = (255, 0, 0)
 bullets = []
 
 #Картинка противника
-enemy_image = pygame.image.load(PATH + '/enemy.png')
+enemy_image = pygame.image.load(os.path.join(base_path, "enemy.png"))
 
 #Скорость игрового цикла
 display = pygame.display.set_mode((display_width, display_height))
@@ -675,7 +676,7 @@ def append_bullet():
 arr_rects_puska = []
 
 #Картинка для фона меню
-menu_back = pygame.image.load(PATH + '/background.jpg')
+menu_back = pygame.image.load(os.path.join(base_path, "background.jpg"))
 
 #Кнопки из класса кнопок окна меню
 btn_2 = Button(210, 80)
@@ -945,10 +946,7 @@ def game():
         pygame.display.update()    
 
 show_menu()
-game() 
-        
- 
-
+game()
 
   
 
