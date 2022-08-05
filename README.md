@@ -1,8 +1,16 @@
 # Project-Game
 Space Invaders Game
 
-In order to launch the game on your computer, you have to install Python and PyGame.
-Then download all files form the repository, including the code.
-After that some editing of the code needed.
+In order to launch the game on your computer:
+* checkout the repo
+* install python 3.x 
+* install pygame
+  ```shell
+  pip install pygame
+  
+  
+* run 
+    python game.py
+    
+* enjoy the game !
 
-In the line 8 you need to change the directory to the folder with all files.
